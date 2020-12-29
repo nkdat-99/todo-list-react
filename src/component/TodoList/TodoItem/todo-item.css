@@ -1,0 +1,35 @@
+.todo-item {
+    padding: 10px;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-weight: bold;
+    font-size: 14px;
+    color: #131313;
+    display: flex;
+    justify-items: center;
+    border-bottom: 1px solid #e6e6e6db;
+}
+
+.item-no-active {
+    text-decoration: line-through;
+    color: #d1d1d1;
+}
+
+.title {
+    margin: auto 5px;
+}
+
+.checkbox {
+    width: 25px;
+    height: 25px;
+    background-color: #fff;
+    border-radius: 50%;
+    border: 1px solid #d1d1d1;
+    margin: 0 10px 0 5px;
+}
+
+.checkbox-done {
+    display: flex;
+    background: url("/src/img/check-done-2.png") no-repeat;
+    background-size: cover;
+    border: 1px solid #00a832;
+}
