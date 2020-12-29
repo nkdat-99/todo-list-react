@@ -3,12 +3,34 @@ import './todo-item.css'
 import classNames from 'classnames'
 
 export default class TodoItem extends Component {
+    constructor() {
+        super();
+        this.state = {
+            hover: false,
+        }
+        this.falseHover = this.falseHover.bind(this);
+        this.trueHover = this.trueHover.bind(this);
+    }
+
+    falseHover() {
+        this.setState({hover: false})
+    }
+
+    trueHover() {
+        this.setState({hover: true})
+    }
+
     render() {
-        const {item , onClick} = this.props;
+        const {item , isActiveItem, delItem} = this.props;
         return (
-            <div onClick={onClick} className={classNames("todo-item", {'item-no-active' : !item.isActive})}>
-                <div className={classNames("checkbox", {'checkbox-done' : !item.isActive})}></div>
-                <div className="title">{this.props.item.title}</div>
+            <div className="todo-item" onMouseLeave={this.falseHover} onMouseEnter={this.trueHover}>
+                <div className="left">
+                    <div onClick={isActiveItem} className={classNames("checkbox", {'checkbox-done' : !item.isActive})}></div>
+                    <div className={classNames("title", {'item-no-active' : !item.isActive})}>{this.props.item.title}</div>
+                </div>
+                {this.state.hover ? <div className="right" onClick={delItem}>
+                    <div className="btn-del"></div>
+                </div>:""}
             </div>
         )
     }

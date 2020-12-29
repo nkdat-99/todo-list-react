@@ -1,12 +1,7 @@
 .todo-item {
-    padding: 10px;
-    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-    font-weight: bold;
-    font-size: 14px;
-    color: #131313;
     display: flex;
-    justify-items: center;
     border-bottom: 1px solid #e6e6e6db;
+    justify-content: space-between;
 }
 
 .item-no-active {
@@ -14,11 +9,21 @@
     color: #d1d1d1;
 }
 
-.title {
+.left {
+    padding: 10px;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-weight: bold;
+    font-size: 14px;
+    color: #131313;
+    display: flex;
+    justify-items: center;
+}
+
+.todo-item .title {
     margin: auto 5px;
 }
 
-.checkbox {
+.todo-item .checkbox {
     width: 25px;
     height: 25px;
     background-color: #fff;
@@ -27,9 +32,32 @@
     margin: 0 10px 0 5px;
 }
 
-.checkbox-done {
+.todo-item .checkbox-done {
     display: flex;
     background: url("/src/img/check-done-2.png") no-repeat;
     background-size: cover;
     border: 1px solid #00a832;
+}
+
+.right {
+    margin-right: 15px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.btn-del {
+    display: flex;
+    background: url("/src/img/del.png") no-repeat;
+    background-size: cover;
+    width: 25px;
+    height: 25px;
+}
+
+.todo-item .btn-del:hover,
+.todo-item .btn-del:focus,
+.todo-item .btn-del:active {
+    background: url("/src/img/del-2.png") no-repeat;
+    background-size: cover;
+    background-color: #fafafa;
 }

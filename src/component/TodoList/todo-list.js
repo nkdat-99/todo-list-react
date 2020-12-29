@@ -80,6 +80,16 @@ export default class TodoList extends Component {
         }
     }
 
+    delItem(item) {
+        return () => {
+            const index = this.state.todoItems.indexOf(item);
+            this.setState({
+                todoItems: [...this.state.todoItems.slice(0, index),
+                ...this.state.todoItems.slice(index + 1)]
+            });
+        };
+    }
+
     onChange(event) {
         this.setState({
             valueItem: event.target.value,
@@ -105,7 +115,7 @@ export default class TodoList extends Component {
                         <input className="todo-input" placeholder="TodoList" onKeyUp={this.onNewItem} value={valueItem} onChange={this.onChange}/>
                     </div>
                     {todoItems.map((item, index) => 
-                        filterItem!==item.isActive && <TodoItem key={index} item={item} onClick={this.isActiveItem(item)}/>
+                        filterItem!==item.isActive && <TodoItem key={index} item={item} isActiveItem={this.isActiveItem(item)} delItem={this.delItem(item)}/>
                     )}
                     <div className="list-footer">
                         <div className="total-active">{todoActive.length} items left</div>

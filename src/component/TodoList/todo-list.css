@@ -3,14 +3,24 @@
     height: 100vh;
 }
 
-.list-header {
+.todo-list {
+    box-sizing: border-box;
+    background-color: #ffffff;
+    width: 350px;
+    position: absolute;
+    top: 100px;
+    left: calc(50% - 175px);
+    box-shadow: 0px 0px 10px 2px #cccccc;
+}
+
+.todo .list-header {
     padding: 10px 0;
     border-bottom: 1px solid #e6e6e6;
     display: flex;
     box-shadow: inset 0 -2px 1px rgba(0, 0, 0, .03);
 }
 
-.check-all {
+.todo .check-all {
     margin-left: 10px;
     width: 35px;
     height: 35px;
@@ -31,37 +41,28 @@
     outline: none;
 }
 
-.todo-list {
-    box-sizing: border-box;
-    background-color: #ffffff;
-    width: 350px;
-    position: absolute;
-    top: 100px;
-    left: calc(50% - 175px);
-}
-
-.list-footer {
+.todo .list-footer {
     display: flex;
     padding: 15px 20px;
 }
 
-.total-active {
+.todo .total-active {
     margin-right: 30px;
     color: #777;
     font-size: 14px;
     font-weight: 500;
 }
 
-button {
+.todo button {
     background-color: #ffffff;
     border: 1px solid #ffffff;
     border-radius: 3px;
     color: #777;
 }
 
-button:hover,
-button:active,
-button:focus {
+.todo button:hover,
+.todo button:active,
+.todo button:focus {
     border: 1px solid rgb(255, 207, 207);
     outline: none;
 }
